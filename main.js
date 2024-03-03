@@ -1,13 +1,13 @@
 // Cria as configurações para Phaser.Game
 const gameDimensions = {
-    width: 750,
-    height: 1334,
+    width: 750, // Define largura
+    height: 1334, // Define altura
 }
 const config = {
     type: Phaser.AUTO, // Ajusta o renderizador automaticamente (WebGL e Canvas)
     backgroundColor:0x444444,
-    width: gameDimensions.width,  // Ajusta a largura para 1334 pixels (temporário)
-    height: gameDimensions.height, // Ajusta a altura
+    width: gameDimensions.width,
+    height: gameDimensions.height, 
     physics: {
         default: 'arcade',
         arcade: {

@@ -6,12 +6,12 @@ class MenuPrincipal extends Phaser.Scene {
   }
   preload() {
     this.load.image("background", "assets/fundoMenu.png") // Fundo da cena do Main Menu
-    this.load.image("botaoJogar", "assets/startButton.png") // Fundo da cena do Main Menu
+    this.load.image("botaoJogar", "assets/startButton.png") // Botão da cena do Main Menu
 
   }
 
   create() {
-    // Carrega a cena Main Menu
+    // Carrega os elementos da cena Main Menu
     this.background = this.add.image(0, 0, "background").setScale(1).setOrigin(0,0)
     this.botaoJogar = this.add.sprite(350, 650, "botaoJogar").setInteractive().setScale(1)
     
@@ -25,25 +25,25 @@ class MenuPrincipal extends Phaser.Scene {
       this.input.setDefaultCursor("default") // Cursor vira setinha
     })
 
-    // Evento disparado ao clicar no botão (Código temporário apenas para demonstração da funcionalidade na sprint 1)
-    this.botaoJogar.on("pointerdown", () => {
-      // Evento de click do mouse
+    // Evento disparado ao clicar no botão
+    this.botaoJogar.on("pointerdown", () => { // Evento de click do mouse
       this.scene.start("Jogo")
       this.scene.stop('Menu')
       this.input.setDefaultCursor("default") // Retorno do cursor do mouse para setinha
-      // this.openFullScreen()
+      // this.openFullScreen() // Essa linha pode ser ativada ou não
+      // Deixei ela off para não incomodar o usuário ao tentar acessar o gameww
     })
   }
 
   update() {}
-  openFullScreen() {
+  openFullScreen() { // Cria toda a lógica de fullscreen (ver acima)
     const page = document.documentElement //Pega o documento inteiro
     if (page.requestFullscreen){ //Se o navegador suportar o Fullscreen
         page.requestFullscreen() //Ativa o Fullscreen
     } else if (page.mozRequestFullScreen){ //Se o navegador suportar o Fullscreen do Mozila
         page.mozRequestFullScreen() //Ativa o Fullscreen
     } else if (page.webkitRequestFullscreen){ //Se o navegador suportar o Fullscreen do Webkit
-        page.webkitRequestFullscreen() //Ativa o Fullscreen
+        page.webkitRequestFullscreen() //Ativa o wFullscreen
     } else if (page.msRequestFullscreen){ //Se o navegador suportar o Fullscreen do Microsoft
         page.msRequestFullscreen() //Ativa o Fullscreen
     }
