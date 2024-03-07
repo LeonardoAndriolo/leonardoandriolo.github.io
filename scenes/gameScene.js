@@ -15,7 +15,7 @@ class CenaJogo extends Phaser.Scene {
     create() {
         this.game.scale.on('orientationchange', function(orientation) {
             if (orientation === Phaser.Scale.LANDSCAPE) {
-                this.scene.scale.orientation = Phaser.Scale.PORTRAIT
+                scene.scale.lockOrientation('portrait')
             }
         })
 
