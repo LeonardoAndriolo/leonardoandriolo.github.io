@@ -13,6 +13,13 @@ class CenaJogo extends Phaser.Scene {
     }
   
     create() {
+        this.game.scale.on('orientationchange', function(orientation) {
+            if (orientation === Phaser.Scale.LANDSCAPE) {
+                this.scene.scale.orientation = Phaser.Scale.PORTRAIT
+            }
+        })
+
+
         // Elemento que garda algumas configurações de jogo
         this.gameOptions = {
             // Distância da primeira plataforma. 0 = parte de cima, 1 = parte de baixo
