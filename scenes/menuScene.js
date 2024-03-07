@@ -11,6 +11,14 @@ class MenuPrincipal extends Phaser.Scene {
   }
 
   create() {
+    if (game.device.os.desktop){
+      console.log('this.game.device.os.desktop: ',game.device.os.desktop)
+      console.log('Desktop ON')
+    } else {
+      console.log('Mobile ?')
+    }
+
+
     // Carrega os elementos da cena Main Menu
     this.background = this.add.image(0, 0, "background").setScale(1).setOrigin(0,0)
     this.botaoJogar = this.add.sprite(350, 650, "botaoJogar").setInteractive().setScale(1)
